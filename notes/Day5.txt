@@ -1,0 +1,176 @@
+
+SUPERVISED LEARNING		Input Data & Output Data		Remember & Generalize
+
+		Regression	Value to Predict is Continuous 
+			Linear Regression			
+			Polynomial Regression		
+			DecisionTree Regressor		
+			RandomForest Regressor		
+
+		Classification	Value to Predict is Discrete
+			
+			Logistic Regression
+			Support Vector Machine	
+			DecisionTree Classifier
+			RandomForest Classifier
+			Naive Bayes
+
+UNSUPERVISED LEARNING		Input Data 			Remember & Generalize
+		Clustering
+			K-means clustering
+
+REINFORCEMENT LEARNING		Accept data on the go - onine learning	Adaptive
+		Upper Confidence Bound
+		Thompsan Sampling
+
+DEEP LEARNING			Input Data & Output Data		Remember & Generalize
+	Artificial Neural Netwrok
+	Convolutional Neural Network
+	Recurrent-Neural Network-LSTM(Long short term memory)	
+
+NATURAL LANG PROCESSING	Preprocessing  Text to Number	
+
+
+
+REINFORCEMENT LEARNING		Accept data on the go - online learning	Adaptive
+		Upper Confidence Bound
+		Thompsan Sampling
+
+
+		Upper Confidence Bound
+
+UseCase:	 
+	Product Company :: ABC company
+	New Product : xyz product	
+
+
+Ad Agency	Ad1	Ad2	Ad3	Ad4	Ad5	Ad6	Ad7	Ad8	Ad9	Ad10
+
+10000 Rounds Free		1 Round == 1 User connection the the social media account
+
+
+
+
+
+Posterior Probability
+
+P(A|B)	= P(A) * P(B|A) / P(B)
+
+P(A|B)	probability of Event A given Event B has occured
+
+Probability of the Ad to get a click given it has got 10 noclicks
+
+For each Ad we need to Capture
+
+number of clicks
+number of no-clicks
+
+
+
+
+
+
+
+
+
+
+
+Natural Lang Processing (nltk) Natural Lang. Tool-Kit
+
+
+Review				Liked
+
+Wow....Loved this place.		1
+Crust is not that good :(		0
+Great place will come back :) !!	1
+
+
+Step1: Substitue all non-alphabets with a space , using python re package
+
+Wow Loved this place
+Crust is not that good 	
+Great place will come back 
+
+Step2: Convert the review to lower case , python lower()
+
+wow loved this place
+crust is not that good 	
+great place will come back 
+
+
+Step3: Convert the stmt into tokens of words , using split() method in python
+	Tokenization
+
+[wow, loved, this, place]
+[crust ,is ,not ,that ,good] 	
+[great ,place, will, come, back ]
+
+Step4:Eliminate Stopwords , using nltk stopwords
+
+[wow, loved, place]
+[crust  ,not ,good] 	
+[great ,place ]
+
+
+Step5:Stemming of words, using nltk stemmer
+
+love	loved	lovable	lovely
+love	love	love	love
+
+[wow, love, place]
+[crust  ,not ,good] 	
+[great ,place ]
+
+Step6: Join the words back to stmt, using join() method in python
+
+wow love place
+crust not good
+great place
+
+Step7: Convert Text to number , using CountVectorizer & Calculation of TFIDF-(Term Frequency and inverse document Freq)
+
+
+			crust	good	great	love	not	place	wow	Liked
+
+wow love place		0	0	0	1	0	1	1	1
+crust not good		1	1	0	0	1	0	0	0
+great place		0	0	1	0	0	1	0	1
+
+
+Step8: Split the data into Train-Test, choose a algo, check accuracy
+
+
+
+TimeStep		=> Look back sequence
+
+Predict next word looking at previous 3 words		TimeStep = previous 3 words == 3
+
+Predict next word looking at previous 50 words		TimeStep = previous 50 words == 50
+
+Predict next days close price looking at previous 100 days close price of the stock
+				TimeStep = previous 100 days stock price == 100
+
+
+X matrix col = TimeStep
+Input Data				Output Data
+X_train					y_train
+
+0 1 2 3 4 5 6 7 8........99			100
+1 2 3 4 5 6 7 8 9......99 100			101
+2 3 4 5 6 7 8 9.... 99 100 101			102
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

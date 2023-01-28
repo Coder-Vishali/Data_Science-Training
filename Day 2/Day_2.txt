@@ -1,0 +1,278 @@
+
+
+
+Pandas	=> Dataframe	Data cleaning , Data Exploration
+			Maps to ost of the data sources like delimited files, json files, db. etc.
+			Panel Sheets == Panel Data == Pandas
+
+
+
+Input Data	Ouput Data
+
+Training Set	10	20	30	40	50	60	
+
+Testing Set	11.23	21.34	35.67	42.11	56.77	59.99
+
+
+Training Set	10k rows from actual population if 100k rows
+
+Testing Set1	1000 rows from actual population if 100k rows
+Testing Set2	1000 rows from actual population if 100k rows
+Testing Set3	1000 rows from actual population if 100k rows
+Testing Set4	1000 rows from actual population if 100k rows
+
+
+
+
+
+
+jupyter notebook --notebook-dir="_________"
+
+
+Types of values / features 
+
+1)Discrete 
+2)Continuous
+
+
+1)Discrete 
+		YrOfBirth		2000	2001	2002	2003	2004
+		Response		0	1
+		DeptId		10	20	30	40	50
+				     
+
+2)Continuous
+		Exact weight of animal in the jungle ???
+
+			1kg~100kg		1.234~5.678	80.190~99.999
+
+
+Outlier Calculation
+
+Step1: Calculate IQR(Inter Quartile Range) variance in Quartile
+
+IQR=(Q3-Q1)*1.5 = 6.667
+
+Step2: 
+
+Q3+IQR = 21.212                              # all values above this are outliers
+
+Q1-IQR = 3.433			  # all values below this are outliers
+
+=======================================================================
+
+Correlation is calculated using r-value / Pearsonr-value  & p-value
+
+
+Pearsonr-value conveys the percentage of correlation between X & y
+
+p-value conveys the percentage of uncorrelation between X & y
+
+===================================================
+Pearsonr-value (-1 to 1)
+
+Pearsonr-value = 0.95		X & y are 95% correlated
+Pearsonr-value = 0.08		X & y are 8% correlated
+
+Pearsonr-value
+
+0 to < 0.25		No correlation , No relevance between x & y
+
+0.25 to < 0.50		Negligible correlation / relevance between x & y
+
+0.50 to < 0.75 		Moderate correlation / relevance between x & y
+
+> 0.75 			Very Strong correlation / relevance between x & y
+
+==============================================================================
+
+X features 10 in number to predict Y
+
+8 features have correlation in moderatae to very strong
+2 features have neglible to no-correlation
+	1 x feature pearsonr- 45%
+	2nd X feature pearsonr- 12%
+
+
+=======================================================
+p-value
+
+p-value=0.98		X & y are 98% uncorrelated
+p-value=0.02		X & y are 2% uncorrelated
+
+
+X features with p-value above 0.05 highly uncorrelated , we ignore or avoid choosing those X features for linear  algo.
+
+X features with p-value below 0.05 highly correlated , we consider choosing those X features for linear  algo.
+
+
+
+
+
+
+
+1)Data Collection
+2)Data Cleaning
+3)Data Exploration
+4)Data Preprocessing		(Ecoding/dummy variable creation ,train-test split, Scaling of values )
+5)Model Implementation
+
+
+SUPERVISED LEARNING		Input Data & Output Data		Remember & Generalize
+
+		Regression	Value to Predict is Continuous 
+			Linear Regression			
+			Polynomial Regression		
+			DecisionTree Regressor		
+			RandomForest Regressor		
+
+		Classification	Value to Predict is Discrete
+			
+			Logistic Regression
+			Support Vector Machine	
+			DecisionTree Classifier
+			RandomForest Classifier
+			Naive Bayes
+
+UNSUPERVISED LEARNING		Input Data 			Remember & Generalize
+		Clustering
+			K-means clustering
+
+REINFORCEMENT LEARNING		Accept data on the go - onine learning	Adaptive
+		Upper Confidence Bound
+		Thompsan Sampling
+
+DEEP LEARNING			Input Data & Output Data		Remember & Generalize
+	Artificial Neural Netwrok
+	Convolutional Neural Network
+	Recurrent-Neural Network-LSTM(Long short term memory)		
+
+NATURAL LANG PROCESSING	Preprocessing  Text to Number	
+
+
+
+
+
+
+Continuous Value Prediction, measure of model performance is Error
+
+YrsExp	ActualSal		PredictedSal	Error = diff(acutal,predicted) =  avg( (diff(acutal,predicted) ^2))
+
+1	10000		10500		-500	
+2.5	12000		12000		0
+3	15000		20000		-5000
+3.5	17000		11000		6000
+4	20000		19000		1000
+4.5	25000		27000		-2000
+					----------------Error 
+
+
+Discrete Value Prediction, Measure of model performance is Accuracy percentage
+
+Age	ActualResponse	PredictedResponse
+						6/9*100=66% accuracy score
+20	0		0
+30	1		1
+21	0		0
+35	1		0
+40	1		1
+45	1		1
+50	0		1
+18	0		0
+19	1		0
+
+
+
+
+
+
+Linear Regression
+
+		y = b0 + b1*x1
+
+
+
+		35000	25000 + 5000*2
+		salary = basePkg + amt*TotalExp
+			0yrsExp	   (+1yrsExp)
+
+
+
+sum(y)*sum(x^2) - sum(x)sum(xy)
+------------------------------------------b0 = intercept
+n*sum(x^2) - sum(x)^2
+
+
+
+n*sum(xy) - sum(x)*sum(y)
+--------------------------------b1 = slope
+n*sum(x^2) - sum(x)^2
+
+
+
+
+
+
+Sample		100 rows
+
+Random Split 	80-20 or 70-30 or 75-25
+
+Train Data	80%		80 rows		X_train,y_train	YrsExp,Salary	
+Test Data		20%		20 rows		X_test,y_test	YrsExp,Salary
+
+
+Machine Getting trained 	X_train,y_train	YrsExp,Salary
+
+Machine Testing 
+
+	Predict salary for 	X_test (YrsExp)
+	PredSalary = y_pred	
+	Actual Salary = y_test 
+	
+Test Data	1		20%		20 rows		X_test,y_test	YrsExp,Salary	4585
+Test Data1		20%		20 rows		X_test,y_test	YrsExp,Salary	4401
+Test Data1		20%		20 rows		X_test,y_test	YrsExp,Salary	4500
+Test Data1		20%		20 rows		X_test,y_test	YrsExp,Salary	4587	
+Test Data1		20%		20 rows		X_test,y_test	YrsExp,Salary	4505
+
+
+
+Use Case
+Client:	I want a ML solution for my business
+
+Business Objective / Acceptance criteria
+	I will accept ML solution if I see improvement in customer satisfaction by 25%
+	and revenue improvement of 2million
+
+
+Data	: Data cleaning , Data Exploration, Data Preprocessing
+
+Train the Machine
+
+Test the Model	=> 98% accurate results
+
+Situation1:	Model1	98% accuracy
+		improvement in customer satisfaction 5% excepted was 25%
+		revenue improvement of 50k expected was 2million
+
+
+Situation2:	Model2	80% accuracy
+		improvement in customer satisfaction 35% excepted was 25%
+		revenue improvement of 5million expected was 2million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

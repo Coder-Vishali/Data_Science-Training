@@ -1,0 +1,148 @@
+
+
+DEEP LEARNING			Input Data & Output Data		Remember & Generalize
+	Artificial Neural Netwrok
+	Convolutional Neural Network
+	Recurrent-Neural Network-LSTM(Long short term memory)
+
+
+
+At the heart of each Neuron in Hidden layer the below Formula is used
+						         
+pattern1 = InputX1*w1 + InputX2*w2 + InputX3*w3 + InputX4*w4
+
+pattern2 = InputX1*w5 + InputX2*w6 + InputX3*w7 + InputX4*w8
+
+pattern3 = InputX1*w9 + InputX2*w10 + InputX3*w11 + InputX4*w12
+
+
+UnderFitting	Not Learning Enough
+
+Good Fit		Learned well to generalize
+
+OverFitting	Too much of Learning
+
+
+	TrainingAcc		TestingAcc
+
+	60%			60%			Low Acc Underfitting
+
+	90%			90%			Good Fit
+
+	90%			95%			Good Fit
+
+	90%			75%			OverFitting
+
+numOfEpochs = To be decided by developer (Trial & Error)
+
+Step1: Initial Weights = Random Weight Allocation (All rows in training set is used against the initial weight)
+Epoch1	y_pred = InputX1*weight1 + InputX2*weight2 + InputX3*weight3	...............+InputXn*weightn
+	Error = lossFunction(y_pred,y_actual)
+	WeightUpdate = optimizer ( weight update Rule)
+			NewWeightS1
+
+Step2: Initial Weights = NewWeightS1
+Epoch2	y_pred = InputX1*weight1 + InputX2*weight2 + InputX3*weight3	...............+InputXn*weightn
+	Error = lossFunction(y_pred,y_actual)
+	WeightUpdate = optimizer ( weight update Rule)
+			NewWeightS2
+
+Step3: Initial Weights = NewWeightS2
+Epoch3	y_pred = InputX1*weight1 + InputX2*weight2 + InputX3*weight3	...............+InputXn*weightn
+	Error = lossFunction(y_pred,y_actual)
+	WeightUpdate = optimizer ( weight update Rule)
+			NewWeightS3
+...................
+StepN: Initial Weights = NewWeightSN-1
+EpochN	y_pred = InputX1*weight1 + InputX2*weight2 + InputX3*weight3	...............+InputXn*weightn
+	Error = lossFunction(y_pred,y_actual)
+	WeightUpdate = optimizer ( weight update Rule)
+			NewWeightSN   => Final Weights giving max accuracy and lowest error / loss
+
+
+Formula at the heart of Each Neuron [Linear Spread of Data]
+
+y_pred = ActivationFunction(bias + InputX1*weight1 + InputX2*weight2 + InputX3*weight3.....+InputXn*weightn)
+
+
+Activation Function			
+
+Linear Activation Functions			(Linear Spread of data)
+			
+Non-Linear Activation Functions		(Linear Spread of data & Non-Linear Spread of data)
+	Sigmoid , Tanh, ReLu,LeakyReLu,ExpReLu
+	
+
+
+Linear Regression - Linear Spread of Data
+
+y_pred = b0 +  InputX1*b1 + InputX2*b2 + InputX3*b3	...............+InputXn*bn
+
+
+Hyper Parameter Tunning (values to be found with trial and error)
+
+1)Num of Neurons in Hidden Layer
+2)Num of Hidden Layers
+3)Num of Epochs
+4)Activation Functions
+5)batch_size
+
+
+				InputLayer	HL	HL	OutputLayer	LossFunction
+	
+Regression					ReLu	ReLu	ReLu		mean_squared_error		
+Binary-Classification				ReLu	ReLu	Sigmoid		binary_classification
+
+Multi-Class-Classification				ReLu	ReLu	Softmax		categorical_crossentropy
+
+
+
+
+
+
+
+
+	# Step1:	start anaconda prompt
+
+	# Step2:		
+
+			python -m pip install --upgrade pip
+
+			pip install keras tensorflow
+
+
+
+
+
+
+
+
+
+
+	GridSearchCV(sklearn Obj)		Trial and error with k-fold cross validation
+
+	NeuralNetwork	Keras object ------type cast -----> sklearn obj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

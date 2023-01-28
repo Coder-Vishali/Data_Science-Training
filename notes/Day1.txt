@@ -1,0 +1,153 @@
+
+
+*********************************Application Development*******************************************
+	Input Data : 2,3,4,5,6
+	Explict Rules / Logic :: Write a program to get the output thats twice the input
+
+
+*********************************Machine Learning***********************************************
+
+	Game: Guess the Number ??
+	Implicitly Rule Learning/Pattern Learning : Output is Twice the Input
+	Pattern:: Calculation done on input to get the output
+
+
+	Input Number		Output Number
+
+		21234	=	45678
+		30987	=	61458
+		41535	=	81969
+		52345	=	10234
+		61378	=	?????	12 predicted	actual 12
+
+		error = diff(actual,predicted) ~ 0	100% accurate Results
+
+
+
+
+
+
+
+
+Machine Learning with Python
+
+	Why Python ???
+
+	1)Its open source
+	2)Easy to learn
+	3)Interactive Environment 
+	4)Python has rich set of libaries that supports datascience implementation
+
+
+ANACONDA	Python Datascience Repository
+
+IDE
+
+1)Jupyter Notebooks	Interactive Environment & Scripting Editor	(Data Exploration Interactive Environment )
+2)Spyder			Interactive Environment & Scripting Editor	(Algo.Implementation  Scripting Editor)	
+
+3)PyCharm
+4)Visual Code
+5)Intellij
+6)Eclipse
+
+
+Step1:	Create a Folder Named "MLPractice" at any location of your choice
+
+Step2:	WinOs
+
+		Start Anaconda Prompt
+
+		jupyter  notebook  --notebook-dir="C:\Users\Bibhu\Desktop\MLPractice"
+
+
+
+# single line comment
+
+"""
+	Multi-line comment
+"""
+
+'''
+	Multi-line comment
+'''
+https://matplotlib.org/2.0.2/api/pyplot_api.html
+https://docs.python.org/3/tutorial/
+
+Datastructure in python
+		
+			Create		Access
+
+1)List			[]		[]
+
+2)Tuple			()		[]
+
+3)Dictionary		{key:val}	[key]
+
+
+Packages in Python for Machine Learning
+
+1)Numpy		=> Numeric array
+		=> High performance arrays
+
+2)Pandas		=> Pandas Dataframe
+3)Scipy		=> Complex Statictical Calculations
+4)Scikit		=> Algorithm implementation
+5)Matplotlib	=> Data Visualtization
+6)Seaborn	=> Data Visualtization
+
+
+
+
+
+
+
+
+Arrays				List
+
+Homogeneous type storage		mixe datatype storage
+
+Contigious mem. 			non-Contigious mem. 	
+Single segment allocation in mem	multiple segment allocation
+
+Parallel execution 			non-parallel execution
+
+numpy integrates C++ code in 	no C++ code  integrated
+python and hence the c-compiler
+embedded interpretes it fast
+
+Uses vectorization algorithm		Loop overheads for operations
+no loops needed for oper.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+
+
+Encoding/summy variable creation / OneHotEncoder
+
+numOfDummyVar = numOfUniqVal - 1
+
+California		d0_C		
+Florida		d1_F		
+New York		d2_NY		
+
+
+State		d0_C	d1_F	d2_NY
+
+New York		0	0	1
+California		1	0	0
+Florida		0	1	0
+New York		0	0	1
+Florida		0	1	0
+New York		0	0	1
+California
+Florida
+New York
+California
+Florida
+California
+Florida
+
+
+
+
+underfitting		Not learning Enough
+			Too much of generalization the model is learning to do
+			testing error will be very high / acc will be very low
+
+
+Good fit			Enough learning
+			has good generalization capability
+			testing error low  / accuracy high, and stable
+
+
+Overfitting		Machine learns too much on training data
+			Does only good on training data
+			it lacks generalization capabilities
+			gives high error / low accuracy on testing data
+			multiple test sets tried against such model will lead to unstable error or accuracy 
+
+
+	Should we Split or Confirm it as Leaf node
+
+	value of n is considered for taking this decision
+	min_samples_split = n		Default set to 2
+	
+	if we have 2 or more data points in the split we devided it further	
+
+
+
+Step1: Train model with min_samples_split = 9
+
+Step2:	Test Sample		Error
+
+	Sample1			236
+	Sample2			300
+	Sample3			150
+	Sample4			400
+
+
+=================================================================
+NumOfTrees = To be decided by developer
+
+RandomForest Tree Creation		(X_train, y_train)		38 samples
+
+Step1:	=> BootStrap Dataset Creation i.e. Random Row selection from the given training set 
+	=> BootStrap dataset will be SAME SIZE as Training Dataset
+			e.g. X_train,y_train		38 samples
+			   BootStrap Dataset	38 Samples
+
+	=> But Bootstrap Dataset	 doesnt use all 38 values in the training set to create the BootStrap dataset
+		it just uses 2/3 of the total values in the training set to create the BootStrap dataset
+
+		2/3(training set)	------------> 66% rows,  Bagging, remainder is called out of Bag Records
+		2/3(38 rows)	------------> 25 rows random pick values from training set (66%)
+
+	=> BootStrap dataset after taking 2/3 unique rows the remainder rows are filledup to match the training set size by 		duplicating rows from 2/3 volume
+
+RandomForest (10 trees)
+
+Tree1	BootStrap Dataset1
+Tree2	BootStrap Dataset2
+Tree3	BootStrap Dataset3
+Tree4	BootStrap Dataset4
+.............
+Tree10	BootStrap Dataset10
+
+
+
+Training Sample
+Row1	pattern1
+Row2	pattern2
+Row3	pattern1
+Row4	pattern1
+Row5	pattern2
+Row6	pattern1
+Row7	pattern3
+Row8	pattern2
+Row9	pattern2
+Row10	pattern1
+Row11	pattern2
+
+BootStrap Dataset1
+Row1	pattern1
+Row2	pattern2
+Row3	pattern1
+Row4	pattern1
+Row5	pattern2
+Row6	pattern1
+Row7	pattern3
+Row7	pattern3
+Row7	pattern3
+Row6	pattern1
+Row6	pattern1
+
+
+If most of the X features (80%) are moderate to very strongly correlated to Y feature
+	Then Choose LINEAR REGRESSION
+
+If most of the X features (80%) are no correlation to negligible correlation to Y feature
+	Then Choose Poly Reg. , DT , RF
+
+
+
+SUPERVISED LEARNING		Input Data & Output Data		Remember & Generalize
+
+		Regression	Value to Predict is Continuous 
+			Linear Regression			Linear spread of data		
+			Polynomial Regression		non-Linear spread of data
+			DecisionTree Regressor		non-Linear spread of data	
+			RandomForest Regressor		non-Linear spread of data
+
+		Classification	Value to Predict is Discrete
+			
+			Logistic Regression			89%
+			Support Vector Machine		93%
+			DecisionTree Classifier		94%	max_depth=2
+			RandomForest Classifier		94%	max_depth=2 ,Trees=10
+			Naive Bayes			90%
+
+
+
+	Age	Salary	BankBalance	CreditScore	OwnHouse
+
+	30	24000	50000		650		1		
+
+
+
+
+
+
+
+K-Fold Cross Validation
+X_train,y_train	divide it into K-Folds	k=5 
+100 rows
+
+Fold1	20 rows
+Fold2	20 rows
+Fold3	20 rows
+Fold4	20 rows
+Fold5	20 rows
+
+
+Cross Validation - 90%-10% Train-Test		High variance
+						Accuracy variation > 1%	Overfiiting issues
+						Accuracy variation == 1%	Good Fit
+			
+
+Training		Testing		Accuracy
+
+Fold1-2-3-4	Fold-5		93%
+
+Fold-1-2-3-5	Fold-4		80%
+
+Fold-1-2-4-5	Fold-3		75%
+
+Fold-1-3-4-5	Fold-2		98%
+
+Fold-2-3-4-5	Fold-1		90%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
